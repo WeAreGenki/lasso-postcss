@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.0] - 2017-12-14
+
 ### Added
 
 - Initial base source files, dependencies, and configurations.
+- POC of working functionality.
 
 [Unreleased]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.0.0...HEAD
+[0.1.0]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.0.0...v0.1.0
