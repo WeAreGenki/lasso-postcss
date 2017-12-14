@@ -21,10 +21,16 @@
  * limitations under the License.
  */
 
-const nodePath = require('path');
+// TODO: Implement source map generation; probably an API or pattern already in lasso
+
+// TODO: Error handling; lasso probably has it's own way of doing things
+
+// TODO: Performance optimisations
+
 const postcss = require('postcss');
 const postcssLoadConfig = require('postcss-load-config');
-const extend = require('raptor-util/extend');
+const nodePath = require('path');
+const fs = require('fs');
 
 function configLoader(file) {
   return (plugins, options) => {
@@ -102,10 +108,10 @@ module.exports = function lassoPostcss(lasso, config) {
         }
 
         const { path } = this;
-        const renderOptions = extend({}, config);
+        let code = '';
 
         if (this.code) {
-          renderOptions.data = this.code;
+          code = this.code; // eslint-disable-line prefer-destructuring
         } else if (path) {
           renderOptions.file = path;
         } else {

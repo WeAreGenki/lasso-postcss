@@ -3212,7 +3212,7 @@ raptor-strings@^1.0.0, raptor-strings@^1.0.2:
   dependencies:
     raptor-polyfill "^1.0.1"
 
-raptor-util@^1.0.0, raptor-util@^1.0.10, raptor-util@^1.0.7, raptor-util@^1.1.2:
+raptor-util@^1.0.0, raptor-util@^1.0.10, raptor-util@^1.0.7:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/raptor-util/-/raptor-util-1.1.2.tgz#f2ee8076a9ae3eae2e65672e46a220074fa2dff3"
 
