@@ -21,9 +21,16 @@
  * limitations under the License.
  */
 
+// TODO: Write readme with all the necessary basic information
+
 // TODO: Implement source map generation; probably an API or pattern already in lasso
+//  ↳ Turns out lasso doesn't even do JS source maps yet... wow.
 
 // TODO: Error handling; lasso probably has it's own way of doing things
+
+// TODO: Configure Jest and write initial set of unit tests
+
+// TODO: PostCSS runner guidelines compliance: https://github.com/postcss/postcss/blob/master/docs/guidelines/runner.md
 
 // TODO: Performance optimisations
 
