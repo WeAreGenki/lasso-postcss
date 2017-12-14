@@ -5,24 +5,28 @@
   "repository": "https://github.com/WeAreGenki/lasso-postcss",
   "author": "Max Milton <max@wearegenki.com>",
   "license": "Apache-2.0",
-  "main": "lasso-postcss.js",
+  "main": "index.js",
   "files": [
-    "lasso-postcss.js"
+    "index.js"
   ],
   "scripts": {
-    "lint": "eslint ./lasso-postcss.js ./test --config .eslintrc.js",
+    "lint": "eslint ./index.js ./test --config .eslintrc.js",
     "test": "node test/test.js"
   },
   "peerDependencies": {
+    "lasso": "^2.11.0"
+  },
+  "dependencies": {
+    "postcss": "^6.0.14",
+    "postcss-load-config": "^1.2.0"
+  },
+  "devDependencies": {
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.4.2",
     "jest": "^21.3.0-beta.8",
-    "lasso": "^2.11.22"
-  },
-  "dependencies": {
-    "postcss": "^6.0.14"
+    "lasso": "^2.11.23"
   },
   "engines": {
     "node": ">= 8.0.0",

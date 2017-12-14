@@ -2,10 +2,8 @@
 
 module.exports = {
   root: true,
-  // parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 2017,
-    // sourceType: 'module',
+    ecmaVersion: 'es5',
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
     },
@@ -17,14 +15,13 @@ module.exports = {
   },
   plugins: [
     'jest',
-    // 'import',
   ],
   extends: [
     'airbnb-base',
     'plugin:jest/recommended',
   ],
   rules: {
-    // 'import/extensions': ['error', 'always', { js: 'never', marko: 'never' }],
+    'strict': 'off',
     'no-underscore-dangle': 'off',
     'object-curly-spacing': ['error', 'always', { objectsInObjects: false }],
     'object-curly-newline': ['error', { consistent: true }],
