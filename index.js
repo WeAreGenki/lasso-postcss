@@ -88,7 +88,7 @@ module.exports = function lassoPostcss(lasso, config) {
       external: 'boolean',
     },
 
-    init(lassoContext, cb) { // eslint-disable-line consistent-return
+    init(lassoContext, callback) { // eslint-disable-line consistent-return
       const { path } = this;
 
       if (path || this.code) {
@@ -99,17 +99,17 @@ module.exports = function lassoPostcss(lasso, config) {
         this.postcssConfig = getConfig(config, this.path);
       } else {
         const pathError = new Error('"path" or "code" is required');
-        if (cb !== undefined) return cb(pathError);
+        if (callback !== undefined) return callback(pathError);
         throw pathError;
       }
 
-      if (cb !== undefined) cb();
+      if (callback !== undefined) callback();
     },
 
-    read(lassoContext, cb) {
+    read(lassoContext, callback) {
       return new Promise((resolve, reject) => { // eslint-disable-line consistent-return
-        if (!cb) {
-          cb = (err, res) => err ? reject(err) : resolve(res); // eslint-disable-line
+        if (!callback) {
+          callback = (err, res) => err ? reject(err) : resolve(res); // eslint-disable-line
         }
 
         const { path } = this;
@@ -120,7 +120,7 @@ module.exports = function lassoPostcss(lasso, config) {
         } else if (path) {
           code = fs.readFileSync(path, 'utf8');
         } else {
-          return cb(new Error('Invalid PostCSS dependency. No path or code'));
+          return callback(new Error('Invalid PostCSS dependency. No path or code'));
         }
 
         this.postcssConfig.then((postcssConfig) => {
@@ -131,9 +131,9 @@ module.exports = function lassoPostcss(lasso, config) {
                 process.stderr.write(warn.toString());
               });
 
-              cb(null, res.css);
+              callback(null, res.css);
             })
-            .catch(cb);
+            .catch(callback);
         });
       });
     },
@@ -147,8 +147,8 @@ module.exports = function lassoPostcss(lasso, config) {
       return path ? nodePath.dirname(path) : undefined;
     },
 
-    getLastModified(lassoContext, cb) {
-      return cb ? cb(null, -1) : -1;
+    getLastModified(lassoContext, callback) {
+      return callback ? callback(null, -1) : -1;
     },
 
     calculateKey() {

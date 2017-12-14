@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Use `callback` instead of `cb` to be more similar to official lasso projects
+
 ## [0.1.1] - 2017-12-14
 
 ### Added
@@ -24,7 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.0] - 2017-12-14
 
-Initial code structure inspired from [lasso-sass](https://github.com/lasso-js/lasso-sass/) and [lasso-less](https://github.com/lasso-js/lasso-less/). A nice place to start but there's a lot of room for improvement!
+Initial code structure inspired by [lasso-sass](https://github.com/lasso-js/lasso-sass/), [lasso-less](https://github.com/lasso-js/lasso-less/), and [gulp-postcss](https://github.com/postcss/gulp-postcss/). A nice place to start but there's plenty of room for improvement!
 
 ### Added
 
@@ -32,4 +36,5 @@ Initial code structure inspired from [lasso-sass](https://github.com/lasso-js/la
 - POC of working functionality.
 
 [Unreleased]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.0.0...HEAD
+[0.1.1]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.0.0...v0.1.0
