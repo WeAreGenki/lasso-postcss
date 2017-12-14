@@ -60,8 +60,6 @@ function getConfig(config, file) {
   const loader = configLoader(file);
 
   return loader().then((resConfig) => {
-    // console.log('@@@ RES CONFIG', resConfig);
-
     const newConfig = Object.assign({}, resConfig);
     const configOpts = config.options || {};
     const resConfigOpts = resConfig.options || {};
@@ -83,7 +81,7 @@ module.exports = function lassoPostcss(lasso, config) {
       external: 'boolean',
     },
 
-    init(lassoContext, cb) {
+    init(lassoContext, cb) { // eslint-disable-line consistent-return
       const { path } = this;
 
       if (path || this.code) {
@@ -102,7 +100,7 @@ module.exports = function lassoPostcss(lasso, config) {
     },
 
     read(lassoContext, cb) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => { // eslint-disable-line consistent-return
         if (!cb) {
           cb = (err, res) => err ? reject(err) : resolve(res); // eslint-disable-line
         }
@@ -113,22 +111,20 @@ module.exports = function lassoPostcss(lasso, config) {
         if (this.code) {
           code = this.code; // eslint-disable-line prefer-destructuring
         } else if (path) {
-          renderOptions.file = path;
+          code = fs.readFileSync(path, 'utf8');
         } else {
-          return cb(new Error('Invalid sass dependency. No path or code'));
+          return cb(new Error('Invalid PostCSS dependency. No path or code'));
         }
 
         this.postcssConfig.then((postcssConfig) => {
           postcss(postcssConfig.plugins)
-            .process(renderOptions.data || renderOptions.file, postcssConfig.options)
-            .then((result) => {
-              console.log('@@@ result', result.css);
-
-              result.warnings().forEach((warn) => {
+            .process(code, postcssConfig.options)
+            .then((res) => {
+              res.warnings().forEach((warn) => {
                 process.stderr.write(warn.toString());
               });
 
-              cb(null, result.css);
+              cb(null, res.css);
             })
             .catch(cb);
         });
