@@ -1,6 +1,6 @@
 {
   "name": "lasso-postcss",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Process your CSS with PostCSS in lasso+marko",
   "repository": "https://github.com/WeAreGenki/lasso-postcss",
   "author": "Max Milton <max@wearegenki.com>",
