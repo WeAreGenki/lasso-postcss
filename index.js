@@ -109,7 +109,7 @@ module.exports = function lassoPostcss(lasso, config) {
     read(lassoContext, callback) {
       return new Promise((resolve, reject) => { // eslint-disable-line consistent-return
         if (!callback) {
-          callback = (err, res) => err ? reject(err) : resolve(res); // eslint-disable-line
+          callback = (error, result) => error ? reject(error) : resolve(result); // eslint-disable-line
         }
 
         const { path } = this;
@@ -126,12 +126,12 @@ module.exports = function lassoPostcss(lasso, config) {
         this.postcssConfig.then((postcssConfig) => {
           postcss(postcssConfig.plugins)
             .process(code, postcssConfig.options)
-            .then((res) => {
-              res.warnings().forEach((warn) => {
+            .then((result) => {
+              result.warnings().forEach((warn) => {
                 process.stderr.write(warn.toString());
               });
 
-              callback(null, res.css);
+              callback(null, result.css);
             })
             .catch(callback);
         });

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Use `callback` instead of `cb` to be more similar to official lasso projects
+- Use verbose variable names (`callback`, `result`, `error`) to be more similar to the official lasso projects.
 
 ## [0.1.1] - 2017-12-14
 
