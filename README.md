@@ -84,7 +84,38 @@ Example:
 
 ## Source maps
 
-Due to limitations in lasso, only inline source maps are currently supported. Use `map: 'inline'` in your config.
+Due to limitations in lasso, if you want external source maps it's necessary to add a `mapPath` option to your config so this plugin knows where to save your source maps. Alternatively your can use inline source maps. [See docs](https://github.com/postcss/postcss/blob/master/docs/source-maps.md) for configuration info.
+
+_NOTE: External source map files are named after the source filename NOT the compiled filename (no fingerprint etc.). This is due to a lasso limitation._
+
+For example:
+
+```javascript
+{
+  plugin: 'lasso-postcss',
+  config: {
+    map: true, // outputs inline source map (default)
+  },
+},
+```
+
+or
+
+```javascript
+const path = require('path');
+
+...
+
+{
+  plugin: 'lasso-postcss',
+  config: {
+    map: { inline: false },
+    mapPath: path.join(process.env.PWD, 'dist'),
+  },
+},
+
+// outputs external source map to: <root>/dist/<source_filename>.map
+```
 
 -----
 

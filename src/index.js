@@ -22,6 +22,7 @@
  */
 
 const fs = require('fs');
+const nodePath = require('path');
 const postcss = require('postcss');
 const getPostcssConfig = require('./postcss-config-loader');
 
@@ -46,9 +47,12 @@ module.exports = (lasso, lassoConfig) => {
               process.stderr.write(warn.toString());
             });
 
-            // FIXME: Source map output path OR better yet, map support in lasso
+            // TODO: Improve this once lasso has source map support
             if (result.map) {
-              fs.writeFile(`${opts.to}.map`, result.map.toString());
+              const mapPath = opts.mapPath
+                ? `${opts.mapPath}/${nodePath.basename(sourcePath)}`
+                : opts.to;
+              fs.writeFile(`${mapPath}.map`, result.map.toString());
             }
 
             return result.css;
