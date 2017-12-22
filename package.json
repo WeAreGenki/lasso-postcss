@@ -1,20 +1,17 @@
 {
   "name": "lasso-postcss",
-  "version": "0.1.1",
-  "description": "Process your CSS with PostCSS in lasso+marko",
+  "version": "0.2.0",
+  "description": "Lasso plugin to transform CSS using PostCSS",
   "repository": "https://github.com/WeAreGenki/lasso-postcss",
   "author": "Max Milton <max@wearegenki.com>",
   "license": "Apache-2.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "files": [
-    "index.js"
+    "src"
   ],
   "scripts": {
-    "lint": "eslint ./index.js ./test --config .eslintrc.js",
+    "lint": "eslint ./src ./test --config .eslintrc.js",
     "test": "node test/test.js"
-  },
-  "peerDependencies": {
-    "lasso": "^2.11.0"
   },
   "dependencies": {
     "postcss": "^6.0.14",
@@ -24,9 +21,9 @@
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.4.2",
-    "jest": "^21.3.0-beta.8",
-    "lasso": "^2.11.23"
+    "eslint-plugin-jest": "^21.5.0",
+    "jest": "^22.0.3",
+    "lasso": "^3.1.0"
   },
   "engines": {
     "node": ">= 6.4.0",
