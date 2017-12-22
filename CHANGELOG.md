@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.0] - 2017-12-22
+
+### Added
+
+- Basic instructions in README.
+
 ### Changed
 
-- Use verbose variable names (`callback`, `result`, `error`) to be more similar to the official lasso projects.
+- Nearly a complete rewrite from a CSS dependency handler into a CSS output transformer. Will now transform any CSS in lasso rather than just handle .css files. This enables chaining style plugins e.g. `lasso-sass` >> `lasso-postcss`.
+- Now mostly compliant with the [PostCSS runner guidelines](https://github.com/postcss/postcss/blob/master/docs/guidelines/runner.md). Only place it falls short is lack of support for external source maps (current limitation of lasso), inline source maps are still OK though.
+
+### Removed
+
+- Clean up unnecessary comments.
 
 ## [0.1.1] - 2017-12-14
 
@@ -35,6 +46,7 @@ Initial code structure inspired by [lasso-sass](https://github.com/lasso-js/lass
 - Initial base source files, dependencies, and configurations.
 - POC of working functionality.
 
-[Unreleased]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.0.0...HEAD
+[Unreleased]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/WeAreGenki/lasso-postcss/compare/v0.0.0...v0.1.0
