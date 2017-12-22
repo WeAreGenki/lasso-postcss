@@ -2,7 +2,19 @@
   "name": "lasso-postcss",
   "version": "0.2.0",
   "description": "Lasso plugin to transform CSS using PostCSS",
-  "repository": "https://github.com/WeAreGenki/lasso-postcss",
+  "keywords": [
+    "lasso-plugin",
+    "lasso",
+    "marko",
+    "lasso-marko",
+    "postcss",
+    "postcss-runner",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WeAreGenki/lasso-postcss.git"
+  },
   "author": "Max Milton <max@wearegenki.com>",
   "license": "Apache-2.0",
   "main": "src/index.js",
