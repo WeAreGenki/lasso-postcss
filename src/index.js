@@ -32,11 +32,12 @@ module.exports = (lasso, lassoConfig) => {
       name: module.id,
       stream: false,
       transform: (code, lassoContext) => {
-        const path = lassoContext.dependency.virtualPath || lassoContext.dependency.path;
-        const opts = Object.assign(config.options, {
-          from: path,
-          to: path,
-        });
+        const { virtualPath, path } = lassoContext.dependency;
+        const sourcePath = virtualPath || path;
+        const opts = Object.assign({
+          from: sourcePath,
+          to: sourcePath,
+        }, config.options);
 
         return postcss(config.plugins)
           .process(code, opts)
