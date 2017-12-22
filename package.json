@@ -1,6 +1,6 @@
 {
   "name": "lasso-postcss",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Lasso plugin to transform CSS using PostCSS",
   "keywords": [
     "lasso-plugin",
