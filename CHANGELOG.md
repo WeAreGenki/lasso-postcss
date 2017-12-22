@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- `keywords` field to `package.json`.
+
+### Removed
+
+- VS Code specific files (didn't really add any value for this project).
+
 ## [0.2.0] - 2017-12-22
 
 ### Added
