@@ -1,10 +1,7 @@
-'use strict';
-
 /**
  * lasso-postcss
- * Lasso plugin to transform CSS using PostCSS
- *
- * @author: Max Milton <max@wearegenki.com>
+ * @overview Lasso plugin to transform CSS using PostCSS.
+ * @author Max Milton <max@wearegenki.com>
  *
  * Copyright 2018 We Are Genki
  *
@@ -21,26 +18,42 @@
  * limitations under the License.
  */
 
-const fs = require('fs');
-const nodePath = require('path');
-const postcss = require('postcss');
-const getPostcssConfig = require('./postcss-config-loader');
+'use strict';
 
-module.exports = (lasso, lassoConfig) => {
-  getPostcssConfig(lassoConfig, process.env.PWD).then((config) => {
+const fs = require('fs');
+const path = require('path');
+const postcss = require('postcss');
+const postcssrc = require('postcss-load-config');
+
+const noop = () => { /* do nothing */ };
+
+/**
+ * @typedef {Object} PluginConfig
+ * @typedef {Object.<string>|Array.<require|Function>} PluginConfig.plugins
+ * @typedef {Boolean|string} PluginConfig.map
+ */
+
+/**
+ * Load PostCSS configuration and transform CSS passed in by Lasso.js
+ * @param {any} lasso Lasso.js plugin context.
+ * @param {PluginConfig} config Plugin configuration options
+ */
+module.exports = (lasso, config) => {
+  postcssrc(config).then(({ plugins, options }) => {
     lasso.addTransform({
       contentType: 'css',
       name: module.id,
       stream: false,
+
       transform: (code, lassoContext) => {
-        const { virtualPath, path } = lassoContext.dependency;
-        const sourcePath = virtualPath || path;
+        const { virtualPath, path: actualPath } = lassoContext.dependency;
+        const sourcePath = virtualPath || actualPath;
         const opts = Object.assign({
           from: sourcePath,
           to: sourcePath,
-        }, config.options);
+        }, options);
 
-        return postcss(config.plugins)
+        return postcss(plugins)
           .process(code, opts)
           .then((result) => {
             result.warnings().forEach((warn) => {
@@ -50,9 +63,9 @@ module.exports = (lasso, lassoConfig) => {
             // TODO: Improve this once lasso has source map support
             if (result.map) {
               const mapPath = opts.mapPath
-                ? `${opts.mapPath}/${nodePath.basename(sourcePath)}`
+                ? `${opts.mapPath}/${path.basename(sourcePath)}`
                 : opts.to;
-              fs.writeFile(`${mapPath}.map`, result.map.toString());
+              fs.writeFile(`${mapPath}.map`, result.map.toString(), noop);
             }
 
             return result.css;
