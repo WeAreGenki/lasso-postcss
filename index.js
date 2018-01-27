@@ -28,24 +28,33 @@ const postcssrc = require('postcss-load-config');
 const noop = () => { /* do nothing */ };
 
 /**
- * @typedef {Object} PluginConfig
- * @typedef {Object.<string>|Array.<require|Function>} PluginConfig.plugins
- * @typedef {Boolean|string} PluginConfig.map
+ * @typedef {object} PluginConfig
+ * @property {object.<string>|Array.<require|Function>} PluginConfig.plugins
+ * @property {boolean|string} PluginConfig.map
  */
 
 /**
  * Load PostCSS configuration and transform CSS passed in by Lasso.js
- * @param {any} lasso Lasso.js plugin context.
- * @param {PluginConfig} config Plugin configuration options
+ * @param {object} lasso Lasso.js plugin execution context.
+ * @param {PluginConfig} config Lasso.js plugin configuration options.
  */
 module.exports = (lasso, config) => {
-  postcssrc(config).then(({ plugins, options }) => {
+  /**
+   * @typedef {object} PostCSSConfig
+   * @property {object} plugins The plugins specified in the PostCSS configuration.
+   * @property {object} options The options specified in the PostCSS configuration.
+   */
+  postcssrc(config).then((/** @type {PostCSSConfig} */{ plugins, options }) => {
     lasso.addTransform({
       contentType: 'css',
       name: module.id,
       stream: false,
 
-      transform: (code, lassoContext) => {
+      /**
+       * @param {string} css The CSS being processed.
+       * @param {object} lassoContext The Lasso.js build context.
+       */
+      transform: (css, lassoContext) => {
         const { virtualPath, path: actualPath } = lassoContext.dependency;
         const sourcePath = virtualPath || actualPath;
         const opts = Object.assign({
@@ -54,7 +63,7 @@ module.exports = (lasso, config) => {
         }, options);
 
         return postcss(plugins)
-          .process(code, opts)
+          .process(css, opts)
           .then((result) => {
             result.warnings().forEach((warn) => {
               process.stderr.write(warn.toString());
