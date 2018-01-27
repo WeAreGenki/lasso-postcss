@@ -1,20 +1,22 @@
 # lasso-postcss
 
-Lasso plugin to transform CSS using PostCSS
+Lasso plugin to transform CSS using PostCSS.
 
 ## Usage
 
-### 1. Install the plugin
+### 1. Install the plugin and dependencies
 
 ```bash
-npm install --dev lasso-postcss
+npm install --dev lasso-postcss postcss
 ```
 
 or
 
 ```bash
-yarn add --dev lasso-postcss
+yarn add --dev lasso-postcss postcss
 ```
+
+Also install the packages for any plugins you want to use.
 
 ### 2. Add plugin to your `project.js` or lasso configuration
 
