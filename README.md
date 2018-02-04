@@ -2,6 +2,8 @@
 
 Lasso plugin to transform CSS using PostCSS.
 
+__IMPORTANT: Lasso currently runs transforms _per each component, not once globally_. This plugin is useful for processing syntax (e.g. nested selectors) but it's highly recommended to do minification _after_ lasso processing.__
+
 ## Usage
 
 ### 1. Install the plugin and dependencies
