@@ -28,11 +28,11 @@
     "postcss-load-config": "^1.2.0"
   },
   "devDependencies": {
-    "@wearegenki/eslint-config": "^0.4.2",
-    "eslint": "^4.17.0",
-    "eslint-plugin-jest": "^21.5.0",
-    "jest": "^22.1.4",
-    "lasso": "^3.1.2"
+    "@wearegenki/eslint-config": "0.4.2",
+    "eslint": "4.17.0",
+    "eslint-plugin-jest": "21.7.0",
+    "jest": "22.1.4",
+    "lasso": "3.1.2"
   },
   "engines": {
     "node": ">= 6.4.0",
