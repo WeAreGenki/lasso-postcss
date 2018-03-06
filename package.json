@@ -20,15 +20,22 @@
   "homepage": "https://wearegenki.com/pro#OpenSource",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./src ./test --config .eslintrc.js",
-    "test": "node test/test.js"
+    "lint": "eslint --ignore-path .gitignore --ext .js src test",
+    "pretest": "npm run lint",
+    "test": "jest --config test/jest.config.js --coverage",
+    "test-ci": "yarn test --runInBand",
+    "test:watch": "yarn test --notify --watch"
   },
   "dependencies": {
     "postcss": "^6.0.17",
     "postcss-load-config": "^1.2.0"
   },
   "devDependencies": {
-    "@wearegenki/eslint-config": "0.4.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@wearegenki/eslint-config": "0.5.0-alpha.f1eec7f5",
+    "@wearegenki/test": "0.5.0-alpha.f1eec7f5",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
     "eslint": "4.18.2",
     "eslint-plugin-jest": "21.12.3",
     "jest": "22.4.2",
