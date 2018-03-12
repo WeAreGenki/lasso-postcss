@@ -10,10 +10,7 @@
     "postcss-runner",
     "css"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/WeAreGenki/lasso-postcss.git"
-  },
+  "repository": "https://github.com/WeAreGenki/lasso-postcss",
   "author": "Max Milton <max@wearegenki.com>",
   "license": "Apache-2.0",
   "homepage": "https://wearegenki.com/pro#OpenSource",
