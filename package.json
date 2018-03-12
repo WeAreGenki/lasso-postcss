@@ -22,9 +22,9 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ext .js src test",
     "pretest": "npm run lint",
-    "test": "jest --config test/jest.config.js --coverage",
-    "test-ci": "yarn test --runInBand",
-    "test:watch": "yarn test --notify --watch"
+    "test": "jest",
+    "test-ci": "yarn test --coverage --runInBand --ci",
+    "test:watch": "yarn test --coverage --notify --watch"
   },
   "peerDependencies": {
     "lasso": "^3.1.0"
