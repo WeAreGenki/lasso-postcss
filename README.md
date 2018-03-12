@@ -1,3 +1,8 @@
+<!-- markdownlint-disable first-line-h1 -->
+
+[![Build Status](https://travis-ci.org/WeAreGenki/lasso-postcss.svg?branch=master)](https://travis-ci.org/WeAreGenki/lasso-postcss)
+[![Known Vulnerabilities](https://snyk.io/test/github/WeAreGenki/lasso-postcss/badge.svg)](https://snyk.io/test/github/WeAreGenki/lasso-postcss)
+
 # lasso-postcss
 
 Lasso plugin to transform CSS using PostCSS.
