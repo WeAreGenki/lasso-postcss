@@ -33,13 +33,13 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.40",
     "@babel/preset-env": "7.0.0-beta.40",
-    "@wearegenki/eslint-config": "0.5.0-alpha.f1eec7f5",
-    "@wearegenki/test": "0.5.0-nightly.8dc8f30",
+    "@wearegenki/eslint-config": "0.5.0",
+    "@wearegenki/test": "0.5.0",
     "babel-plugin-dynamic-import-node": "1.2.0",
     "eslint": "4.18.2",
-    "eslint-plugin-jest": "21.13.0",
+    "eslint-plugin-jest": "21.14.0",
     "jest": "22.4.2",
-    "lasso": "3.1.2"
+    "lasso": "3.1.3"
   },
   "engines": {
     "node": ">= 6.4.0",
