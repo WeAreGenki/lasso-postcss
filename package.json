@@ -2,6 +2,10 @@
   "name": "lasso-postcss",
   "version": "0.4.0",
   "description": "Lasso plugin to transform CSS using PostCSS.",
+  "repository": "https://github.com/WeAreGenki/lasso-postcss",
+  "homepage": "https://wearegenki.com/pro#OpenSource",
+  "author": "Max Milton <max@wearegenki.com>",
+  "license": "Apache-2.0",
   "keywords": [
     "lasso-plugin",
     "lasso",
@@ -10,10 +14,6 @@
     "postcss-runner",
     "css"
   ],
-  "repository": "https://github.com/WeAreGenki/lasso-postcss",
-  "author": "Max Milton <max@wearegenki.com>",
-  "license": "Apache-2.0",
-  "homepage": "https://wearegenki.com/pro#OpenSource",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ext .js src test",
