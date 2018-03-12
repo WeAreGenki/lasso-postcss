@@ -428,7 +428,7 @@
     "@babel/helper-regex" "7.0.0-beta.40"
     regexpu-core "^4.1.3"
 
-"@babel/preset-env@7.0.0-beta.40", "@babel/preset-env@^7.0.0-beta.40":
+"@babel/preset-env@^7.0.0-beta.40":
   version "7.0.0-beta.40"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.0.0-beta.40.tgz#713292f9e410f76b3f4301330756c89343c4b2e4"
   dependencies:
@@ -2932,7 +2932,7 @@ jest-worker@^22.2.2:
   dependencies:
     merge-stream "^1.0.1"
 
-jest@22.4.2:
+jest@^22.4.2:
   version "22.4.2"
   resolved "https://registry.yarnpkg.com/jest/-/jest-22.4.2.tgz#34012834a49bf1bdd3bc783850ab44e4499afc20"
   dependencies:
