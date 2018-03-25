@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@wearegenki/eslint-config": "0.5.1",
-    "@wearegenki/test": "0.5.1",
+    "@wearegenki/test": "0.7.0",
     "codecov": "3.0.0",
     "eslint": "4.19.0",
     "jest": "22.4.2",
