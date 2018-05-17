@@ -1,5 +1,9 @@
 <!-- markdownlint-disable first-line-h1 -->
 
+**WARNING: This project is no longer maintained. Marko/lasso never worked as we would have liked and so we've migrated to [Svelte](https://svelte.technology). See [`minna-ui`](https://github.com/WeAreGenki/minna-ui) for our new web UI framework.**
+
+-----
+
 [![Build Status](https://travis-ci.org/WeAreGenki/lasso-postcss.svg?branch=master)](https://travis-ci.org/WeAreGenki/lasso-postcss)
 [![Known Vulnerabilities](https://snyk.io/test/github/WeAreGenki/lasso-postcss/badge.svg)](https://snyk.io/test/github/WeAreGenki/lasso-postcss)
 
