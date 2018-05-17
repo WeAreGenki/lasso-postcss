@@ -30,9 +30,9 @@
     "postcss-load-config": "^1.2.0"
   },
   "devDependencies": {
-    "@wearegenki/eslint-config": "0.7.0",
-    "@wearegenki/test": "0.8.0",
-    "codecov": "3.0.0",
+    "@wearegenki/eslint-config": "0.12.0",
+    "@wearegenki/test": "0.10.0",
+    "codecov": "3.0.1",
     "eslint": "4.19.1",
     "jest": "22.4.3",
     "lasso": "3.1.4"
